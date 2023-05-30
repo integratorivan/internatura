@@ -1,0 +1,29 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.base_button {
+  background-color: #B3EC86;
+  color: #141414;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 0;
+  transition: 0.1s;
+}
+
+.base_button:active {
+  transition: 0.3s;
+  background-color: #B6FF7C;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 30%;
+}
