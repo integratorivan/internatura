@@ -9,11 +9,18 @@ module.exports = {
     'standard-with-typescript'
   ],
   overrides: [
+    {
+      extends: [
+        'plugin:@typescript-eslint/recommended-requiring-type-checking'
+      ],
+      files: ['./**/*.{ts,tsx}']
+    }
   ],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: 'boilerplate/tsconfig.json'
+    project: './tsconfig.json',
+    tsconfigRootDir: __dirname
   },
   plugins: [
     'react'
