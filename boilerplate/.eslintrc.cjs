@@ -1,49 +1,52 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
   },
   extends: [
     'airbnb',
     'plugin:react/recommended',
-    'standard-with-typescript'
   ],
   overrides: [
     {
       extends: [
-        'plugin:@typescript-eslint/recommended-requiring-type-checking'
+        'plugin:@typescript-eslint/recommended-requiring-type-checking',
       ],
-      files: ['./**/*.{ts,tsx}']
-    }
+      files: ['./**/*.{ts,tsx}'],
+    },
   ],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: './tsconfig.json',
-    tsconfigRootDir: __dirname
+    tsconfigRootDir: __dirname,
   },
   plugins: [
-    'react'
+    'react',
   ],
   rules: {
+    'import/no-unresolved': 'off',
+    'no-use-before-define': 'off',
+    'import/no-extraneous-dependencies': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react/require-default-props': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',
     '@typescript-eslint/member-delimiter-style': [1, {
       multiline: {
         delimiter: 'semi',
-        requireLast: true
+        requireLast: true,
       },
       singleline: {
         delimiter: 'comma',
-        requireLast: false
-      }
+        requireLast: false,
+      },
     }],
     '@typescript-eslint/no-unused-vars': ['warn', {
       vars: 'all',
       args: 'after-used',
       ignoreRestSiblings: false,
-      varsIgnorePattern: '^React$|^_$'
+      varsIgnorePattern: '^React$|^_$',
     }],
     curly: [1, 'all'],
     'brace-style': [1, '1tbs', { allowSingleLine: true }],
@@ -57,7 +60,7 @@ module.exports = {
     'padding-line-between-statements': [
       'warn',
       { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
-      { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] }
+      { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },
     ],
     'react/sort-comp': [1, {
       order: [
@@ -66,8 +69,8 @@ module.exports = {
         'instance-variables',
         'lifecycle',
         'everything-else',
-        'render'
-      ]
+        'render',
+      ],
     }],
     'react/jsx-filename-extension': [
       'error',
@@ -76,11 +79,11 @@ module.exports = {
           '.js',
           '.jsx',
           '.ts',
-          '.tsx'
-        ]
-      }
+          '.tsx',
+        ],
+      },
     ],
     'import/prefer-default-export': 0,
-    'import/order': 0
-  }
-}
+    'import/order': 0,
+  },
+};
