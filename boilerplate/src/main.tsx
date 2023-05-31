@@ -10,7 +10,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <SWRConfig value={
       {
-        fetcher: (resource, init) => fetch(resource, init).then((res) => res.json()),
+        fetcher: (resource: RequestInfo, init: RequestInit) => fetch(resource, init)
+          .then((res) => res.json()),
       }
     }
     >

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useSWR from 'swr';
 
@@ -19,8 +18,7 @@ export const Main = () => {
       </h2>
       <div className="container">
         <Button onClick={() => console.log(1)} type="button">
-          Привет,
-          { data?.title }
+          Привет { data?.title }
         </Button>
       </div>
     </>

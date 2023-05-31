@@ -30,6 +30,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/require-default-props': 'off',
+    'react/jsx-one-expression-per-line': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',
     '@typescript-eslint/member-delimiter-style': [1, {
