@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import useSWR from 'swr';
 
 import { Posts } from './types';
@@ -7,19 +7,24 @@ import './index.css';
 import { Button } from '@/components';
 
 export const Main = () => {
-  const { data } = useSWR<Posts>(
-    'https://jsonplaceholder.typicode.com/posts/1',
+  const { data } = useSWR<Posts[]>(
+    'https://jsonplaceholder.typicode.com/posts',
   );
+  const navigate = useNavigate();
 
   return (
     <>
-      <h2>
-        <Link to="/login">Перейти на страницу логина</Link>
-      </h2>
       <div className="container">
-        <Button onClick={() => console.log(1)} type="button">
-          Привет { data?.title }
+        <Button onClick={() => navigate('/login')} type="button">
+          Войти
         </Button>
+        {
+          data?.map((post) => (
+            <p key={post.id}>
+              {post.userId}
+            </p>
+          ))
+        }
       </div>
     </>
   );

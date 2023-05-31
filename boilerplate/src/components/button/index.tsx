@@ -3,7 +3,7 @@ import './style.css';
 
 type ButtonProps = {
   children: ReactNode;
-  onClick: (...args: any) => void;
+  onClick?: (...args: any) => void;
   type: 'button' | 'submit';
   className?: string;
 }
