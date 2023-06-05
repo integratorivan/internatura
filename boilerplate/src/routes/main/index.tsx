@@ -7,8 +7,8 @@ import './index.css';
 import { Button } from '@/components';
 
 export const Main = () => {
-  const { data } = useSWR<Posts[]>(
-    'https://jsonplaceholder.typicode.com/posts',
+  const { data } = useSWR<Posts>(
+    'https://jsonplaceholder.typicode.com/posts/1',
   );
   const navigate = useNavigate();
 
@@ -18,11 +18,8 @@ export const Main = () => {
         <Button onClick={() => navigate('/login')} type="button">
           Войти
         </Button>
-        {data?.map((post) => (
-          <p key={post.id}>
-            {post.userId}
-          </p>
-        ))}
+        <br />
+        {data?.title}
       </div>
     </>
   );

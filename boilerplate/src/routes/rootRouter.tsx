@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
-import Main from './main';
+import { Main } from './main';
 import { ErrorPage } from './error';
 import { Login } from './login';
 
