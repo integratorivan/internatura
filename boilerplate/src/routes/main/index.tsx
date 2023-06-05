@@ -18,13 +18,11 @@ export const Main = () => {
         <Button onClick={() => navigate('/login')} type="button">
           Войти
         </Button>
-        {
-          data?.map((post) => (
-            <p key={post.id}>
-              {post.userId}
-            </p>
-          ))
-        }
+        {data?.map((post) => (
+          <p key={post.id}>
+            {post.userId}
+          </p>
+        ))}
       </div>
     </>
   );
